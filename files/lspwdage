@@ -32,7 +32,7 @@ while getopts :hie opt ; do
 		(h)
 			man "${0##*/}"
 			exit 0
-    ;;
+                ;;
     
 		(i)
 			if [ -z $system_user_file ] ; then
@@ -41,7 +41,7 @@ while getopts :hie opt ; do
             else
                 include_system_users=true
             fi
-    ;;
+                ;;
     
 		(e)
             if [ -z $system_user_file ] ; then
@@ -50,12 +50,12 @@ while getopts :hie opt ; do
             else
                 include_system_users=
             fi
-    ;;
+                ;;
     
 		(\?)
             printf -- '%s\n' "Unexpected flag. Please see the man page."
 			exit 1
-    ;;
+                ;;
     
 	esac
 done
