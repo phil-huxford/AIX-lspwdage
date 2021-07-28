@@ -36,24 +36,24 @@ while getopts :hie opt ; do
     
 		(i)
 			if [ -z $system_user_file ] ; then
-                printf -- '%s\n' "No system user list found, please see the man page."
-                exit 1
-            else
-                include_system_users=true
-            fi
+                            printf -- '%s\n' "No system user list found, please see the man page."
+                            exit 1
+                        else
+                            include_system_users=true
+                        fi
                 ;;
     
 		(e)
-            if [ -z $system_user_file ] ; then
-                printf -- '%s\n' "No system user list found, please see the man page."
-                exit 1
-            else
-                include_system_users=
-            fi
+                        if [ -z $system_user_file ] ; then
+                            printf -- '%s\n' "No system user list found, please see the man page."
+                            exit 1
+                        else
+                            include_system_users=
+                        fi
                 ;;
     
 		(\?)
-            printf -- '%s\n' "Unexpected flag. Please see the man page."
+                        printf -- '%s\n' "Unexpected flag. Please see the man page."
 			exit 1
                 ;;
     
