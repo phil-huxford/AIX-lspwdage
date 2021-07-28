@@ -1,0 +1,83 @@
+.TH PWDMGR 1 "28 July 2021"
+.SH NAME
+.B lspwdage 
+\- is used to generate a report on the
+.B lastupdate
+field for all users.
+
+
+.SH INTRODUCTION
+.B lspwdmgr
+is used to generate a report on the 
+.B lastupdate
+field /etc/security/passwd file for all users. 
+
+You can choose to exclude system users (if you maintain a list of them) 
+from the report.
+
+The report format is "Username|YYYY/Mon/DD" for easy export to a 
+spreadsheet program. This report will have a 
+"Username|Last Changed Password" header row.
+
+
+.SH SYSTEM_USERS 
+To add system users to this script, please edit line 3 with 
+the path to the file. For example:
+
+	system_user_file="/path/to/system_user_list"
+
+
+.SH FLAGS
+This script will run as normal if it is run without any
+flags
+.B unless
+you maintain a list of system users. If you maintain a list
+of system users and do not specify a flag, you will be asked 
+if you want to include them in the report.
+
+The
+.B \-h
+flag will display the help file (this man page).
+
+The
+.B \-i
+flag is used to 
+.B include 
+system users in the report.
+If you use this flag and do not have a list of system users,
+you will get the following error:
+"No system user list found, please see the man page."
+
+The
+.B \-e
+flag is used to 
+.B exclude 
+system users from the report.
+If you use this flag and do not have a list of system users,
+you will get the following error:
+"No system user list found, please see the man page."
+
+
+.SH EXAMPLE
+This script, although it will run fine in the terminal, 
+is designed to be saved to a file.
+
+	lspwdage -e > /home/phil/pwdage_report
+
+
+.SH FILES
+.B System_user_list 
+
+The system user list is located: /path/to/sys_users
+
+.B lspwdage
+
+This script is located: /usr/bin/lspwdage
+
+.B man
+
+This man page is located: /usr/share/man/man1/lspwdage.1
+
+
+.SH AUTHOR
+Phil Huxford, The Iowa Clinic
