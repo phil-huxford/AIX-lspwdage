@@ -1,4 +1,4 @@
-#!/usr/bin/ksh93
+#!/usr/bin/env ksh93
 
 system_user_file=
 all_users=
