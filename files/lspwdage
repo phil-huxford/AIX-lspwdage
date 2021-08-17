@@ -1,6 +1,9 @@
 #!/usr/bin/env ksh93
 
 system_user_file=
+
+########################################
+
 all_users=
 user_list=
 user_file=
@@ -41,7 +44,7 @@ while getopts :hie opt ; do
     
 		(i)
 			if [ -z $system_user_file ] ; then
-                            no_sys_users()
+                            no_sys_users
                         else
                             include_system_users=true
                         fi
@@ -49,7 +52,7 @@ while getopts :hie opt ; do
     
 		(e)
                         if [ -z $system_user_file ] ; then
-                            no_sys_users()
+                            no_sys_users
                         else
                             include_system_users=
                         fi
